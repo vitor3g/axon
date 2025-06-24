@@ -2,16 +2,26 @@
 	"name": "axon",
 	"module": "index.ts",
 	"type": "module",
+	"version": "0.1.0",
 	"scripts": {
-		"cli": "bun run cli/cmd.ts",
+		"dev": "tsx watch monitor/cmd.ts",
 		"lint:format": "bunx biome format --write",
 		"lint:fix": "bunx biome lint --write"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.0.5",
-		"@types/bun": "latest"
+		"@types/bun": "latest",
+		"@types/figlet": "^1.7.0"
 	},
 	"peerDependencies": {
 		"typescript": "^5"
+	},
+	"dependencies": {
+		"@stdlib/string-format": "^0.2.2",
+		"binance": "^2.15.22",
+		"dotenv": "^16.5.0",
+		"figlet": "^1.8.1",
+		"tsx": "^4.20.3",
+		"zod": "^3.25.67"
 	}
 }
