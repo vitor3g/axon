@@ -2,8 +2,8 @@ import { Logger } from "./common/logger";
 import * as pkg from "@/package.json";
 import { drawFiglet } from "./common/utils";
 
-import { binance } from "@/libs/binance";
-import { Binance } from "@/data/binance";
+import { Binance } from "@/sdk/binance";
+import { Asaas } from "@/sdk/asaas";
 
 async function bootstrap() {
   const logger = new Logger("axon::monitor");
@@ -19,8 +19,9 @@ async function bootstrap() {
 
   // hackfix: temporary binance health check
   await Binance.checkStatus();
-
-  process.stdin.resume();
+  
+  // hackfix: temporary asaas account registration status to preceed
+  await Asaas.checkRegistrationStatus();
 }
 
 bootstrap();
